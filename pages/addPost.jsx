@@ -15,8 +15,8 @@ export default function AddPost() {
 			language,
 			code
 		})
-		
-		router.push(`/`)
+
+  router.push(`/`)
 	}
 
 	return (

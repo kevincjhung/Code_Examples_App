@@ -32,7 +32,6 @@ export default function Code({ post }) {
   const [liked, setLiked] = useState(false)
   
   
-  
   // Get the post id from the url
   const router = useRouter()
   let postId = router.query.id
