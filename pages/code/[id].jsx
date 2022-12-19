@@ -155,6 +155,7 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
   // TODO: connect to prisma directly. This makes one extra http request that's bad.
+  // TODO: getStaticProps not working
 
   // axios call to get the post with the id from the url
   let postId = context.params.id
