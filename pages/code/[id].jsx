@@ -26,6 +26,8 @@ export default function Code({ post }) {
   // useSession
   const { data: session, status } = useSession()
   
+  // TODO: detect if the user has already liked the post 
+
   // useState
   const [comments, setComments] = useState([])
   const [commentsCount, setCommentsCount] = useState(0)
@@ -137,7 +139,7 @@ export async function getStaticPaths() {
   }
 
   // Call an API endpoint to get posts
-  const res = await axios.get('http://localhost:3000/api/posts')
+  const res = await axios.get('/api/posts')
   let postsArray = res.data.data
   let paths = postsArray.map( (post) => ({
     params: { id: post.id.toString() },
@@ -152,9 +154,11 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
+  // TODO: connect to prisma directly. This makes one extra http request that's bad.
+
   // axios call to get the post with the id from the url
   let postId = context.params.id
-  let res = await axios.get(`http://localhost:3000/api/posts/${postId}`)
+  let res = await axios.get(`/api/posts/${postId}`)
   
   return {
     // Passed to the page component as props
