@@ -15,7 +15,7 @@ export default function AddPost() {
 			language,
 			code
 		})
-		// router.push(`/posts/${data.id}`)  // use this after the post page is created
+	
 		router.push('/')
 	}
 
