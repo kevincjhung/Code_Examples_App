@@ -1,15 +1,7 @@
 # Next App Code Examples
-You're kind of just building this app. For now, just hard code a single user into the app. You will add user auth later.
-
-https://www.slipshods.com/
-
-This assignment is due Nov 10th at 11:59pm.
-Push all of your code to github and deploy your app to vercel.
-https://classroom.github.com/a/g3uvhqFW
 
 
 # Progress
-    🤔: completed, not tested.
     ✅: completed, tested
     ❌: incomplete/does not work
 
@@ -17,17 +9,15 @@ https://classroom.github.com/a/g3uvhqFW
 
 ## 1) Prisma
 ✅ Setup all of the models and relationships for the entities in the README file.
-<br><br>
 
 
 ## 2) Create a post
 ✅ Add a button to the home page that says "Create a post" and takes you to a page where you can create a post.
 
 ✅ When the user submits a post, it should send the data to the server and create a new post in the database.
-
-Currently, it redirects to the homepage, make it redirect to the page of the code snippet after that
-page is built
-<br><br>
+    - Currently, it redirects to the homepage, make it redirect to the page of the code snippet after that page is built
+<br>
+<br>
 
 
 ## 3) Get all posts on the home page
@@ -55,9 +45,8 @@ page is built
 
 
 ## 6) Like/Unlike post
-❌ ✅  Allow a user to like and unlike a post. This will increment or decrement the like count for that post.
-    
-❌ ✅ Clicking the like button will toggle the like on and off.
+❌✅  Allow a user to like and unlike a post. This will increment or decrement the like count for that post. 
+      Clicking the like button will toggle the like on and off.
 
 
 ## 7) User Profile Page
@@ -98,14 +87,14 @@ page is built
 
 # Problems
 ❌ Add like and delete like is functional, but the state is not shown in the post component
+
 ❌ comment count is not shown in the post component
 
 
 
-
 # Resources
-
 https://www.sammeechward.com/prisma-and-nextjs
+
 
 ## commands
 yarn migrate:dev --name init
