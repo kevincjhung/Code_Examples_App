@@ -159,6 +159,7 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
   // TODO: connect to prisma directly. This makes one extra http request that's bad.
+  // TODO: the getstaticprops is causing the build issue
 
   // axios call to get the post with the id from the url
   let postId = context.params.id
@@ -170,8 +171,6 @@ export async function getStaticProps(context) {
     }
   })
       
-
-  
   return {
     // Passed to the page component as props
     props: { post: res.data },
