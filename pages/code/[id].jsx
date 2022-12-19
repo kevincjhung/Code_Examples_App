@@ -4,6 +4,10 @@ import Post from '../../components/Post'
 import Comments from '../../components/Comments'
 import CommentForm from '../../components/CommentForm'
 
+
+// prisma
+import prisma from '../../server/db/client'
+
 // Libraries
 import { useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
@@ -155,11 +159,18 @@ export async function getStaticPaths() {
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
   // TODO: connect to prisma directly. This makes one extra http request that's bad.
-  // TODO: getStaticProps not working
 
   // axios call to get the post with the id from the url
   let postId = context.params.id
-  let res = await axios.get(`/api/posts/${postId}`)
+  
+  // connect to prisma
+  let res = await prisma.post.findUnique({
+    where: {
+      // finish this
+    }
+  })
+      
+
   
   return {
     // Passed to the page component as props
