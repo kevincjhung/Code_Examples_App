@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import LanguageDropdown from '../components/LanguageDropdown/index.jsx'
 import NavBar from '../components/NavBar/index.jsx'
 import NewPostForm from '../components/NewPostForm/index.jsx'
@@ -15,8 +15,8 @@ export default function AddPost() {
 			language,
 			code
 		})
-	
-		router.push('/')
+
+  router.push(`/`)
 	}
 
 	return (
