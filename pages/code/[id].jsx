@@ -167,7 +167,7 @@ export async function getStaticProps(context) {
   // connect to prisma
   let res = await prisma.post.findUnique({
     where: {
-      // finish this
+      // 
     }
   })
       
