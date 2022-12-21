@@ -4,6 +4,9 @@ This is a code snippets app that allows users to create code snippets and share 
 
 It is extended from a project in the course javascript frameworks.
 
+## Visit The Application Here:
+https://code-examples-app-kevincjhung.vercel.app/
+
 ## Progress
 ✅: completed, tested
 ❌: incomplete/does not work``
