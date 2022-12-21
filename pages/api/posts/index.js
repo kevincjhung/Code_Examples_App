@@ -18,10 +18,9 @@ export default async function handler(req, res) {
 						user: true,
 					}
 				})
-
 				posts = JSON.parse(JSON.stringify(posts)),
 
-					res.status(200).json({ success: true, data: posts })
+				res.status(200).json({ success: true, data: posts })
 			} catch (error) {
 				console.error(error)
 				res.status(400).json({ success: false, message: error.message })
@@ -30,7 +29,7 @@ export default async function handler(req, res) {
 
 		case 'POST':
 			const session = await unstable_getServerSession(req, res, authOptions)
-
+			
 			// if user is not logged in, return 401
 			if (!session) {
 				console.error('log in before you create a post')

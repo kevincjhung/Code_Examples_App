@@ -4,6 +4,12 @@ import Post from '../../components/Post'
 import Comments from '../../components/Comments'
 import CommentForm from '../../components/CommentForm'
 
+
+// prisma
+// import prisma from '../../server/db/client' 
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+
 // Libraries
 import { useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
@@ -26,14 +32,11 @@ export default function Code({ post }) {
   // useSession
   const { data: session, status } = useSession()
   
-  // TODO: detect if the user has already liked the post 
-
   // useState
   const [comments, setComments] = useState([])
   const [commentsCount, setCommentsCount] = useState(0)
   const [liked, setLiked] = useState(false)
-  
-  
+   
   // Get the post id from the url
   const router = useRouter()
   let postId = router.query.id
@@ -46,7 +49,6 @@ export default function Code({ post }) {
       try {
         let result = await axios.get(`/api/comments/${postId}`, { signal: abortController.signal })
         result = result.data.data
-        console.log(result.length)
         setComments(result) 
         setCommentsCount(result.length) 
 
@@ -61,6 +63,10 @@ export default function Code({ post }) {
       abortController.abort()
     }
   }, [])
+
+
+
+
 
   
   // after comment submit, we need to update the comments state, and the comments count
@@ -109,7 +115,7 @@ export default function Code({ post }) {
         <title>{post.title}</title>
       </Head>
         <Post
-          post={post.data}
+          post={post}
           className='px-6 my-3 mt-10'
           smallMaxWith={"max-w-2xl"}
           largeMaxWith={"max-w-7xl"}
@@ -130,7 +136,6 @@ export default function Code({ post }) {
 
 // Statically generate paths for all posts
 export async function getStaticPaths() {
-  // dont prerender any static pages in preview environments. Faster builds, but slower initial page load
   if (process.env.SKIP_BUILD_STATIC_GENERATION) {
     return {
       paths: [],
@@ -138,12 +143,10 @@ export async function getStaticPaths() {
     }
   }
 
-  // Call an API endpoint to get posts
-  const res = await axios.get('/api/posts')
-  let postsArray = res.data.data
-  let paths = postsArray.map( (post) => ({
+  const posts = await prisma.post.findMany({})
+  const paths = posts.map((post) => ({
     params: { id: post.id.toString() },
-  }))
+  }))  
 
   return {
     paths,
@@ -154,15 +157,22 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps(context) {
-  // TODO: connect to prisma directly. This makes one extra http request that's bad.
+  const id = parseInt(context.params.id)
+  const post = await prisma.post.findUnique({
+    where: {
+      id,
+    },
+    include:{
+      user: true,
+    }
+  })
 
-  // axios call to get the post with the id from the url
-  let postId = context.params.id
-  let res = await axios.get(`/api/posts/${postId}`)
-  
+
   return {
     // Passed to the page component as props
-    props: { post: res.data },
+    props: { 
+      post: JSON.parse(JSON.stringify(post)) 
+    },
   }
 }
 
