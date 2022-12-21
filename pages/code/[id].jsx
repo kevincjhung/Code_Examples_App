@@ -135,6 +135,7 @@ export default function Code({ post }) {
 
 
 // Statically generate paths for all posts
+// TODO: incremental static regeneration
 export async function getStaticPaths() {
   if (process.env.SKIP_BUILD_STATIC_GENERATION) {
     return {
