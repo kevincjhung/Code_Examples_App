@@ -16,6 +16,8 @@ It is extended from a project in the course javascript frameworks.
 - Styling
     - onHover for titles and buttons
 
+    // TODO: merge the branches so the secret show up, then try deploying again and see if it works  Dec 21, 2022 14:23
+
 ## 1) Prisma
 
 ✅ Setup all of the models and relationships for the entities in the README file.
