@@ -5,17 +5,18 @@ This is a code snippets app that allows users to create code snippets and share 
 It is extended from a project in the course javascript frameworks.
 
 ## Progress
-
 ✅: completed, tested
 ❌: incomplete/does not work``
 
 # Problems/Todos
 
-❌ Add like and delete like is functional, but the state is not shown in the post component
+- Add like and delete like is functional, but the state is not shown in the post component
+- comment count is not shown in the post component
+- resolve all TODOs in code comments
+- Styling
+    - onHover for titles and buttons
 
-❌ comment count is not shown in the post component
-
-❌ resolve all TODOs in code comments
+    // TODO: merge the branches so the secret show up, then try deploying again and see if it works  Dec 21, 2022 14:23
 
 ## 1) Prisma
 
@@ -96,5 +97,4 @@ It is extended from a project in the course javascript frameworks.
 <https://www.sammeechward.com/prisma-and-nextjs>
 
 ## commands
-
 yarn migrate:dev --name init
