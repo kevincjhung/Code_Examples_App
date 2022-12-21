@@ -30,14 +30,14 @@ export default function Code({ post }) {
   // useSession
   const { data: session, status } = useSession()
   
-  // TODO: detect if the user has already liked the post 
+  
 
   // useState
   const [comments, setComments] = useState([])
   const [commentsCount, setCommentsCount] = useState(0)
   const [liked, setLiked] = useState(false)
-  
-  
+  const [userHasLiked, setUserHasliked] = useState(false)
+   
   // Get the post id from the url
   const router = useRouter()
   let postId = router.query.id
@@ -55,7 +55,7 @@ export default function Code({ post }) {
         setCommentsCount(result.length) 
 
       } catch (error) {
-        console.error(error)
+        console.error('the error', error)
         if (axios.isCancel(error)) {
           return
         }
