@@ -6,7 +6,6 @@ import CommentForm from '../../components/CommentForm'
 
 
 // prisma
-// import prisma from '../../server/db/client' 
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
@@ -18,6 +17,7 @@ import styled from 'styled-components'
 import { useSession } from "next-auth/react"
 import PostActions from '../../components/PostActions'
 import { fromJSON } from 'postcss'
+
 
 // Styled Components
 const Wrapper = styled.div`
@@ -63,9 +63,6 @@ export default function Code({ post }) {
       abortController.abort()
     }
   }, [])
-
-
-
 
 
   
@@ -133,9 +130,7 @@ export default function Code({ post }) {
 }
 
 
-
 // Statically generate paths for all posts
-// TODO: incremental static regeneration
 export async function getStaticPaths() {
   if (process.env.SKIP_BUILD_STATIC_GENERATION) {
     return {
@@ -147,16 +142,20 @@ export async function getStaticPaths() {
   const posts = await prisma.post.findMany({})
   const paths = posts.map((post) => ({
     params: { id: post.id.toString() },
-  }))  
+  })) 
 
+  // pre-render only these paths at build time.
   return {
     paths,
-    fallback: false, // can also be true or 'blocking'
+    fallback: false, // server-render pages on demand if the path doesn't exist
   }
 }
 
 
-// `getStaticPaths` requires using `getStaticProps`
+/**
+ * This function gets called at build time on server-side.
+ * It may be called again, on a serverless function, if revalidation is enabled and a new request comes in
+ */
 export async function getStaticProps(context) {
   const id = parseInt(context.params.id)
   const post = await prisma.post.findUnique({
@@ -174,6 +173,7 @@ export async function getStaticProps(context) {
     props: { 
       post: JSON.parse(JSON.stringify(post)) 
     },
+    revalidate: 30, // In seconds
   }
 }
 
