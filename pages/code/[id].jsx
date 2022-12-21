@@ -4,7 +4,6 @@ import Post from '../../components/Post'
 import Comments from '../../components/Comments'
 import CommentForm from '../../components/CommentForm'
 
-
 // prisma
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
@@ -41,7 +40,6 @@ export default function Code({ post }) {
   const router = useRouter()
   let postId = router.query.id
 
-
   // Fetch all comments for this particular post
   useEffect(() => {
     const abortController = new AbortController()
@@ -63,8 +61,6 @@ export default function Code({ post }) {
       abortController.abort()
     }
   }, [])
-
-
   
   // after comment submit, we need to update the comments state, and the comments count
   const handleSubmit = async (e) => {
