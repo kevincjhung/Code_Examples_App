@@ -8,13 +8,26 @@ It is extended from a project in the course javascript frameworks.
 ✅: completed, tested
 ❌: incomplete/does not work``
 
-# Problems/Todos
-
+# Problems 
 - Add like and delete like is functional, but the state is not shown in the post component
 - comment count is not shown in the post component
-- resolve all TODOs in code comments
+
+
+# Todo
 - Styling
     - onHover for titles and buttons
+    - change the icon in the nav bar
+    - margins
+    - look up more things to do 
+    - skeleton load for:
+        - home page
+        - profile page
+    - Button click animations
+- Do a proper profile page
+    - show all of the posts for that user
+- Page Transitions
+- make navbar thing appear on:hover
+- share plugin
 
 
 ## 1) Prisma
