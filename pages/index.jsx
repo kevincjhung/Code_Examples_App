@@ -6,6 +6,9 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../public/loading.svg'
 
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 export default function Home() {
   let [ posts, setPosts ] = useState(null)
 
@@ -15,7 +18,7 @@ export default function Home() {
     ;(async () => {
       try {
         let result = await axios.get("/api/posts", { signal: abortController.signal })
-        setPosts(result.data.data)
+        // setPosts(result.data.data)
         console.log(result.data.data)
       } catch (error) {
         console.error(error)
@@ -31,10 +34,16 @@ export default function Home() {
 
 
   let content;
-  
   // if posts have not been fetched yet, show a loading spinner, else show the posts
   if(posts === null) {
-    content = <h2>Loading... <img src="/loading.svg" className="App-logo"/></h2>
+    content = (
+      <div className="flex justify-center">
+        <Skeleton className='my-5'
+          baseColor="#404040" highlightColor="#666" height={500} width={1200} count={3}
+        />
+        
+      </div>
+    )
   } else if(posts.length == 0) {
     content = <h2>There are no posts yet, click the "Create Something" button above to be the first to poster</h2>
   } else {
