@@ -1,8 +1,8 @@
 # Code Snippets App
 
-This is a code snippets app that allows users to create code snippets and share them with other users. Users can also comment on code snippets and like code snippets. This app is built with Next.js, Prisma, and Tailwind CSS.
+This is a code snippets app that allows users to create code snippets and share them with others. Users can also comment on code snippets and like code snippets. This app is built with Next.js, Prisma, and Tailwind CSS.
 
-It is extended from a project in the course javascript frameworks.
+It is extended from a javascript frameworks course assignment.
 
 ## Visit The Application Here:
 https://code-examples-app-kevincjhung.vercel.app/
