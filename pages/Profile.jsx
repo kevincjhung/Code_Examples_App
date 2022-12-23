@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import { unstable_getServerSession } from "next-auth/next"
 import { authOptions } from './api/auth/[...nextauth]'
+import Button from "../components/Button"
 
 export default function Component() {
   // accessing the session client side
@@ -8,21 +9,34 @@ export default function Component() {
   
   if (session) {
     return (
-      <div className="w-1/2">
-        <h1>Signed in as: {session.user.name}</h1>
-        <img src={session.user.image}  className="rounded-md"/>
-        <h2>{session.user.email}</h2>
-        <button onClick={() => signOut()} className="bg-sky-500 w-1/3">Sign out</button>
+      <div className="h-full flex flex-col items-center justify-center ">
+        <h3 className="text-2xl mt-1">
+          Signed in as:
+        </h3>
+        <h1 className="text-4xl mt-1">
+          {session.user.name}
+        </h1>
+        <img src={session.user.image}  className="rounded-full w-6/12 my-1.5 text-2xl"/>
+        <h2 className="my-1.5 text-2xl">Email: {session.user.email}</h2>
+        
+        <button className="mt-4 w-5/12 content-center group relative flex justify-center py-2 px-4 border border-transparent text-lg font-medium rounded-md text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 transition duration-300 ease-in-out hover:scale-105" 
+          onClick={() => signOut()}>
+          Sign Out
+        </button>
       </div>
     )
-  }
-  return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
-  )
+  } else{
+    return (
+      <>
+        Not signed in <br />
+        <button onClick={() => signIn()}>Sign in</button>
+      </>
+    )
+  } 
 }
+
+
+
 
 export async function getServerSideProps(context) {
   // get server side details
@@ -30,9 +44,7 @@ export async function getServerSideProps(context) {
   
   // if no session, redirect to login
   if (!session) {
-
-    // redirect to login
-    return {
+    return {  // redirect to login
       redirect: { 
         destination: '/api/auth/signin',
         permanent: false,

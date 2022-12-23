@@ -20,14 +20,14 @@ It is extended from a project in the course javascript frameworks.
     ✅ margins
     - look up more things to do 
     - skeleton load for:
-        - home page
+        ✅ home page
         - profile page
     - Button click animations
 - Do a proper profile page
     - show all of the posts for that user
 - Page Transitions
-- make navbar thing appear on:hover
 - share plugin
+- change the html favicon
 
 
 ## 1) Prisma

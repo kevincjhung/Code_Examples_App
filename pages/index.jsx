@@ -39,7 +39,7 @@ export default function Home() {
     content = (
       <div className="flex justify-center">
         <Skeleton className='my-5'
-          baseColor="#404040" highlightColor="#666" height={500} width={1200} count={3}
+          baseColor="#404040" highlightColor="#666" height={350} width={1200} count={5}
         />
         
       </div>
@@ -53,7 +53,7 @@ export default function Home() {
           post={post}
           user={post.user}
           href={`/code/${post.id}`}
-          className='my-10 bg-zinc-800 rounded-lg shadow-lg hover:brightness-110 transition duration-300 ease-in-out hover:scale-105'
+          className='my-10 bg-zinc-800 rounded-lg shadow-lg hover:brightness-110 transition duration-300 ease-in-out '
           onLike={() => console.log("like post", post.id)}
           onComment={() => console.log("comment post", post.id)}
           onShare={() => console.log("share post", post.id)}
@@ -67,10 +67,10 @@ export default function Home() {
     <div className="pt-8 pb-10 lg:pt-12 lg:pb-14 mx-auto max-w-7xl px-2">
       <div className='max-w-2xl mx-auto'>
         <h1 className="text-3xl font-normal tracking-tight text-gray-100 sm:text-4xl font-sans">
-          Notes App, For Code
+          Code Examples: A Notes App, For Code
         </h1>
         <Link href="/AddPost">
-          <Button children={"Create Something"}/>
+          <Button children={"Create Something"} className="bg-gradient-to-r from-violet-500 to-fuchsia-500 transition duration-300 ease-in-out hover:scale-105"/>
         </Link>
       </div>
       <ul className='mt-8'>
