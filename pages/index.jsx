@@ -18,7 +18,7 @@ export default function Home() {
     ;(async () => {
       try {
         let result = await axios.get("/api/posts", { signal: abortController.signal })
-        // setPosts(result.data.data)
+        setPosts(result.data.data)
         console.log(result.data.data)
       } catch (error) {
         console.error(error)
@@ -53,7 +53,7 @@ export default function Home() {
           post={post}
           user={post.user}
           href={`/code/${post.id}`}
-          className='my-10'
+          className='my-10 bg-zinc-800 rounded-lg shadow-lg hover:brightness-110 transition duration-300 ease-in-out hover:scale-105'
           onLike={() => console.log("like post", post.id)}
           onComment={() => console.log("comment post", post.id)}
           onShare={() => console.log("share post", post.id)}

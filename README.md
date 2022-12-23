@@ -15,9 +15,9 @@ It is extended from a project in the course javascript frameworks.
 
 # Todo
 - Styling
-    - onHover for titles and buttons
-    - change the icon in the nav bar
-    - margins
+    ✅ onHover for titles and buttons
+    ✅ change the icon in the nav bar
+    ✅ margins
     - look up more things to do 
     - skeleton load for:
         - home page

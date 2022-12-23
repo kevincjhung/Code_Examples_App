@@ -109,7 +109,7 @@ export default function Code({ post }) {
       </Head>
         <Post
           post={post}
-          className='px-6 my-3 mt-10'
+          className='px-6 my-3 mt-10 w-9/12 mx-auto'
           smallMaxWith={"max-w-2xl"}
           largeMaxWith={"max-w-7xl"}
           onComment={handleComment}
@@ -119,8 +119,8 @@ export default function Code({ post }) {
           totalComments={99}
           totalLikes={99}
         />
-      { session ? <CommentForm onSubmit={handleSubmit} user={session.user} /> : <p>Log in to like or leave a comment</p> }
-      <Comments comments={comments} className="px-6 my-3 mt-10" />
+      { session ? <CommentForm onSubmit={handleSubmit} user={session.user} className="w-9/12 mx-auto"/> : <p>Log in to like or leave a comment</p> }
+      <Comments comments={comments} className="px-6 my-3 mt-10 w-9/12 mx-auto" />
     </div>
   )
 }
