@@ -6,8 +6,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../public/loading.svg'
 
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+// import Skeleton from 'react-loading-skeleton'
+// import 'react-loading-skeleton/dist/skeleton.css'
 
 import Head from 'next/head'
 
@@ -42,10 +42,8 @@ export default function Home() {
   // if posts have not been fetched yet, show a loading skeleton, else show the posts
   if(posts === null) {
     content = (
-      <div className="flex justify-center">
-        <Skeleton className='my-5'
-          baseColor="#404040" highlightColor="#666" height={350} width={1200} count={5}
-        />
+      <div className="flex justify-center ">
+        
         
       </div>
     )
