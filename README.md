@@ -18,15 +18,11 @@ It is extended from a project in the course javascript frameworks.
     ✅ onHover for titles and buttons
     ✅ change the icon in the nav bar
     ✅ margins
-    - look up more things to do 
-    - skeleton load for:
-        ✅ home page
-        - profile page
+    ✅ skeleton load for home page
     - Button click animations
-- Do a proper profile page
+✅ Do a proper profile page
     - show all of the posts for that user
 - Page Transitions
-- share plugin
 - change the html favicon
 
 

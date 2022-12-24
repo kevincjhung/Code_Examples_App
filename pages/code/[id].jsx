@@ -106,6 +106,7 @@ export default function Code({ post }) {
     <div>
       <Head>
         <title>{post.title}</title>
+        <link rel="shortcut icon" href="/app-icon.png" />
       </Head>
         <Post
           post={post}
