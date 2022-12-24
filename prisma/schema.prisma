@@ -41,7 +41,6 @@ model Post {
   userId        String      // relation scalar field  (used in the `@relation` attribute above)
   comments      Comment[]
   likes         Like[]
-
 }
 
 
