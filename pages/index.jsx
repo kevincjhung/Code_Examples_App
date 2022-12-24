@@ -34,6 +34,9 @@ export default function Home() {
   }, [])
 
 
+  
+
+
   let content;
   // if posts have not been fetched yet, show a loading skeleton, else show the posts
   if(posts === null) {
@@ -55,7 +58,7 @@ export default function Home() {
           user={post.user}
           href={`/code/${post.id}`}
           className='my-10 bg-zinc-800 rounded-lg shadow-lg hover:brightness-110 transition duration-300 ease-in-out '
-          onLike={() => console.log("like post", post.id)}
+          onLike={() => console.log("like/unlike post:", post.id)}
           onComment={() => console.log("comment post", post.id)}
           onShare={() => console.log("share post", post.id)}
         />

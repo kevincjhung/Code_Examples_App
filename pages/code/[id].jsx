@@ -35,6 +35,10 @@ export default function Code({ post }) {
   const [comments, setComments] = useState([])
   const [commentsCount, setCommentsCount] = useState(0)
   const [liked, setLiked] = useState(false)
+  const [likesCount, setLikesCount] = useState(0)
+  
+  console.log(post)
+
    
   // Get the post id from the url
   const router = useRouter()
@@ -50,6 +54,27 @@ export default function Code({ post }) {
         setComments(result) 
         setCommentsCount(result.length) 
 
+      } catch (error) {
+        console.error(error)
+        if (axios.isCancel(error)) {
+          return
+        }
+      }
+    })()
+      return () => {
+      abortController.abort()
+    }
+  }, [])
+
+  // fetch likes for this particular post
+  useEffect(() => {
+    const abortController = new AbortController()
+    ;(async () => {
+      try {
+        let result = await axios.get(`/api/likes/${postId}`, { signal: abortController.signal })  
+        let numberOfLikes = result.data.data
+        // console.log('number of likes', numberOfLikes)
+        setLikesCount(numberOfLikes)
       } catch (error) {
         console.error(error)
         if (axios.isCancel(error)) {
@@ -87,11 +112,17 @@ export default function Code({ post }) {
   const handleLike = async (e) => {
     console.log('like/unlike button clicked')
     try {
+      // like/unlike
       await axios.post(`/api/likes/${router.query.id}`, { 
-        session,
-        liked
+        session
       })
-      setLiked(!liked)
+      
+  
+      // set the total likes
+      let result = await axios.get(`/api/likes/${router.query.id}`)
+      let numberOfLikes = result.data.data
+      // console.log(`number of likes`, numberOfLikes)
+      // setLikesCount(numberOfLikes)
     } catch(error){
       console.error(error)
     }
@@ -117,10 +148,15 @@ export default function Code({ post }) {
           onLike={handleLike}
           onShare={handleShare}
           liked={liked}
-          totalComments={99}
-          totalLikes={99}
+          totalComments={commentsCount}
+          totalLikes={likesCount}
         />
-      { session ? <CommentForm onSubmit={handleSubmit} user={session.user} className="w-9/12 mx-auto"/> : <p>Log in to like or leave a comment</p> }
+      { session 
+          ? 
+          <CommentForm onSubmit={handleSubmit} user={session.user} className="w-9/12 mx-auto"/> 
+          : 
+          <p>Log in to like or leave a comment</p> 
+      }
       <Comments comments={comments} className="px-6 my-3 mt-10 w-9/12 mx-auto" />
     </div>
   )
