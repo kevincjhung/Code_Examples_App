@@ -8,6 +8,7 @@ import '../public/loading.svg'
 
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+
 import Head from 'next/head'
 
 export default function Home() {
