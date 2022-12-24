@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+
+// components
 import LanguageDropdown from '../components/LanguageDropdown/index.jsx'
 import NavBar from '../components/NavBar/index.jsx'
 import NewPostForm from '../components/NewPostForm/index.jsx'
