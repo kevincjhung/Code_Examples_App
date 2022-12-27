@@ -29,7 +29,6 @@ export default async function likes(req, res) {
     // liking/unliking a post
     case "POST":
       try {
-				// TODO: fix, right now, it lets you like a post multiple times
         let { session } = req.body;
 
         // get user id with email from session
