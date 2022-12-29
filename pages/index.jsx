@@ -35,9 +35,6 @@ export default function Home() {
   }, [])
 
 
-  
-
-
   let content;
   // if posts have not been fetched yet, show a loading skeleton, else show the posts
   if(posts === null) {

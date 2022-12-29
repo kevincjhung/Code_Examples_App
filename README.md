@@ -1,6 +1,17 @@
 # Code Snippets App
 
-This is a code snippets app that allows users to create code snippets and share them with others. Users can also comment on code snippets and like code snippets. This app is built with Next.js, Prisma, and Tailwind CSS.
+This is a code snippets app that allows users to create code snippets and share them with others. 
+Users can also comment on code snippets and like code snippets. 
+This app is built with: 
+Next.js as the main framework, with React frontent. 
+Prisma with a cloud PostgreSQL database for data persistence.
+NextAuth (Github) for authentication. 
+Tailwind CSS and StyledComponents for styling. 
+ 
+
+Individual posts are generated using getStaticProps for a faster loading time.
+The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. 
+
 
 It is extended from a javascript frameworks course assignment.
 
@@ -16,17 +27,12 @@ https://code-examples-app-kevincjhung.vercel.app/
 - comment count is not shown in the post component
 
 
-# Todo
+# Stretch Goals
 - Styling
-    ✅ onHover for titles and buttons
-    ✅ change the icon in the nav bar
-    ✅ margins
-    ✅ skeleton load for home page
     - Button click animations
-✅ Do a proper profile page
-    - show all of the posts for that user
-- Page Transitions
-- change the html favicon
+- show all of the posts from a given user on the user profile page
+- page Transitions
+
 
 
 ## 1) Prisma
@@ -65,8 +71,7 @@ https://code-examples-app-kevincjhung.vercel.app/
 
 ## 6) Like/Unlike post
 
-❌✅  Allow a user to like and unlike a post. This will increment or decrement the like count for that post.
-      Clicking the like button will toggle the like on and off.
+✅  Allow a user to like and unlike a post. This will increment or decrement the like count for that post.
 
 ## 7) User Profile Page
 
@@ -104,8 +109,3 @@ https://code-examples-app-kevincjhung.vercel.app/
     comment
     like
 
-# Resources
-<https://www.sammeechward.com/prisma-and-nextjs>
-
-## commands
-yarn migrate:dev --name init
