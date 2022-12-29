@@ -39,9 +39,8 @@ export default function Home() {
   // if posts have not been fetched yet, show a loading skeleton, else show the posts
   if(posts === null) {
     content = (
-      <div className="flex justify-center ">
-        
-        
+      <div className="flex justify-center">
+        <h1 className="text-2xl animate-bounce">Getting the newest code...</h1>
       </div>
     )
   } else if(posts.length == 0) {
