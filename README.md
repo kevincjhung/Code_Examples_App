@@ -71,7 +71,7 @@ https://code-examples-app-kevincjhung.vercel.app/
 ## 7) User Profile Page
 
 ✅ Create a profile page at /profile that shows the user's posts and comments.<br><br>
-<br><br>
+
 
 ## 8) Add user auth (lab)
 
