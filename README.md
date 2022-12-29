@@ -15,7 +15,7 @@ The home page uses swr to fetch the posts from the database, assuming that in a 
 
 It is extended from a javascript frameworks course assignment.
 
-## Visit The Application Here:
+## The Application Is Hosted Here:
 https://code-examples-app-kevincjhung.vercel.app/
 
 ## Progress
