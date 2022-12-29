@@ -13,26 +13,25 @@ Individual posts are generated using getStaticProps for a faster loading time.<b
 The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. <br>
 
 
-It is extended from a javascript frameworks course assignment.
+It is extended from a javascript frameworks course assignment.<br><br>
 
 ## The Application Is Hosted Here:
 https://code-examples-app-kevincjhung.vercel.app/
 
 ## Progress
 ✅: completed, tested
-❌: incomplete/does not work``
+❌: incomplete/does not work <br><br>
 
 # Problems 
 - Add like and delete like is functional, but the state is not shown in the post component
-- comment count is not shown in the post component
+- comment count is not shown in the post component <br><br>
 
 
 # Stretch Goals
 - Styling
     - Button click animations
 - show all of the posts from a given user on the user profile page
-- page Transitions
-
+- page Transitions <br>
 
 
 ## 1) Prisma
