@@ -22,10 +22,6 @@ https://code-examples-app-kevincjhung.vercel.app/
 ✅: completed, tested<br>
 ❌: incomplete/does not work <br><br>
 
-# Problems 
-- Add like and delete like is functional, but the state is not shown in the post component
-- comment count is not shown in the post component <br><br>
-
 
 # Stretch Goals
 - Styling
