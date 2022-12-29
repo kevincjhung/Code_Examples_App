@@ -3,14 +3,14 @@
 This is a code snippets app that allows users to create code snippets and share them with others. 
 Users can also comment on code snippets and like code snippets. 
 This app is built with: 
-Next.js as the main framework, with React frontent. 
-Prisma with a cloud PostgreSQL database for data persistence.
-NextAuth (Github) for authentication. 
-Tailwind CSS and StyledComponents for styling. 
+* Next.js as the main framework, with React frontent. 
+* Prisma with a cloud PostgreSQL database for data persistence.
+* NextAuth (Github) for authentication. 
+* Tailwind CSS and StyledComponents for styling. <br>
  
 
-Individual posts are generated using getStaticProps for a faster loading time.
-The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. 
+Individual posts are generated using getStaticProps for a faster loading time.<br>
+The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. <br>
 
 
 It is extended from a javascript frameworks course assignment.
