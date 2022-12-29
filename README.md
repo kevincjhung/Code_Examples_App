@@ -19,7 +19,7 @@ It is extended from a javascript frameworks course assignment.<br><br>
 https://code-examples-app-kevincjhung.vercel.app/
 
 ## Progress
-✅: completed, tested
+✅: completed, tested<br>
 ❌: incomplete/does not work <br><br>
 
 # Problems 
