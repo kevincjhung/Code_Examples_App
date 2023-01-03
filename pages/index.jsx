@@ -6,8 +6,9 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../public/loading.svg'
 
+// loading skeleton was causing problems during build, using text loading indicator for now.
 // import Skeleton from 'react-loading-skeleton'
-// import 'react-loading-skeleton/dist/skeleton.css' //
+// import 'react-loading-skeleton/dist/skeleton.css' 
 
 import Head from 'next/head'
 
