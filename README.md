@@ -3,36 +3,31 @@
 This is a code snippets app that allows users to create code snippets and share them with others. 
 Users can also comment on code snippets and like code snippets. 
 This app is built with: 
-Next.js as the main framework, with React frontent. 
-Prisma with a cloud PostgreSQL database for data persistence.
-NextAuth (Github) for authentication. 
-Tailwind CSS and StyledComponents for styling. 
+* Next.js as the main framework, with React frontent. 
+* Prisma with a cloud PostgreSQL database for data persistence.
+* NextAuth (Github) for authentication. 
+* Tailwind CSS and StyledComponents for styling. <br>
  
 
-Individual posts are generated using getStaticProps for a faster loading time.
-The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. 
+Individual posts are generated using getStaticProps for a faster loading time.<br>
+The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. <br>
 
 
-It is extended from a javascript frameworks course assignment.
+It is extended from a javascript frameworks course assignment.<br><br>
 
-## Visit The Application Here:
+## The Application Is Hosted Here:
 https://code-examples-app-kevincjhung.vercel.app/
 
 ## Progress
-✅: completed, tested
-❌: incomplete/does not work``
-
-# Problems 
-- Add like and delete like is functional, but the state is not shown in the post component
-- comment count is not shown in the post component
+✅: completed, tested<br>
+❌: incomplete/does not work <br><br>
 
 
 # Stretch Goals
 - Styling
     - Button click animations
 - show all of the posts from a given user on the user profile page
-- page Transitions
-
+- page Transitions <br>
 
 
 ## 1) Prisma
@@ -76,15 +71,15 @@ https://code-examples-app-kevincjhung.vercel.app/
 ## 7) User Profile Page
 
 ✅ Create a profile page at /profile that shows the user's posts and comments.<br><br>
-<br><br>
+
 
 ## 8) Add user auth (lab)
 
 <b>Add user auth to the app using next auth.</b>
 
-✅ 15% Add github login
+✅ Add github login
 
-❌ 15% Add google login (probably leave this until the end)
+❌ Add google login (probably leave this until the end)
     Google Auth
     <https://console.cloud.google.com/apis/>
 
@@ -93,18 +88,18 @@ https://code-examples-app-kevincjhung.vercel.app/
     Create oauth credentials
     http://localhost:3000/api/auth/callback/google
 
-✅ 15% Add the user auth nav bar functionality: Show the avatar in the nav bar
+✅ Add the user auth nav bar functionality: Show the avatar in the nav bar
     Allow the user to sign out from the nav bar
     Allow the user to sign in from the nav bar
 
-✅ 15% Don't allow a user to create a post unless they are logged in.
+✅ Don't allow a user to create a post unless they are logged in.
 
-✅ 15% Create a logical flow for a user to sign in and then create a post.
+✅ Create a logical flow for a user to sign in and then create a post.
     (restrict access to the create post page, or have them sign in when they hit the submit button)
 
-✅ 15% Save the logged in user to the database using the prisma adapter
+✅ Save the logged in user to the database using the prisma adapter
 
-✅ 10% Create a one-to-many relatioinship between the user and the other entities:
+✅ Create a one-to-many relatioinship between the user and the other entities:
     post
     comment
     like
