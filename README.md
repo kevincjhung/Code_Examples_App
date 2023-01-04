@@ -3,7 +3,7 @@
 This is a code snippets app that allows users to create code snippets and share them with others. 
 Users can also comment on code snippets and like code snippets. 
 This app is built with: 
-* Next.js as the main framework, with React frontent. 
+* Next.js as the main framework, with React frontend. 
 * Prisma with a cloud PostgreSQL database for data persistence.
 * NextAuth (Github) for authentication. 
 * Tailwind CSS and StyledComponents for styling. <br>
@@ -23,11 +23,12 @@ https://code-examples-app-kevincjhung.vercel.app/
 ❌: incomplete/does not work <br><br>
 
 
-# Stretch Goals
+# To Be Completed
 - Styling
     - Button click animations
 - show all of the posts from a given user on the user profile page
-- page Transitions <br>
+- page transitions, using framer
+- Google auth <br>
 
 
 ## 1) Prisma
