@@ -200,7 +200,7 @@ export async function getStaticProps(context) {
     }
   })
 
-
+  // This is incremental static regeneration
   return {
     // Passed to the page component as props
     props: { 

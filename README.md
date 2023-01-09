@@ -58,6 +58,10 @@ https://code-examples-app-kevincjhung.vercel.app/
 
 ✅ use getStaticProps to load the post
 
+✅ implement incremental static regeneration to update the page after the site has been built on a per-page basis.  
+
+✅ use getStaticProps to load the post
+
 ✅ use swr, or useEffect to fetch the comments for the post.
 
 ## 5) Create a comment
