@@ -13,7 +13,7 @@ Individual posts are generated using getStaticProps for a faster loading time.<b
 The home page uses swr to fetch the posts from the database, assuming that in a real application, the posts will change constantly. <br>
 
 
-It is extended from a javascript frameworks course assignment.<br><br>
+This project was extended from a javascript frameworks course assignment.<br><br>
 
 ## The Application Is Hosted Here:
 https://code-examples-app-kevincjhung.vercel.app/
