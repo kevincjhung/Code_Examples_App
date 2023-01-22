@@ -77,7 +77,7 @@ export default function Home() {
             src="app-icon.png" width={200} height={200} alt="Notes App"
           />
           <Link href="/AddPost">
-            <Button children={"Create Something"} className="bg-gradient-to-r from-violet-500 to-fuchsia-500 transition duration-300 ease-in-out hover:scale-105"/>
+            <Button children={"Create A Post"} className="bg-gradient-to-r from-violet-500 to-fuchsia-500 transition duration-300 ease-in-out hover:scale-105"/>
           </Link>
         </div>
         <ul className='mt-8'>

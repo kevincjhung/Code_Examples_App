@@ -75,7 +75,6 @@ export default async function likes(req, res) {
           });
         } else {  
           // user liked this post before, remove like from db
-					// console.log(`removing like for user: ${user_id} and post: ${id}`);
 
           // remove like from the like table
           await prisma.like.deleteMany({
